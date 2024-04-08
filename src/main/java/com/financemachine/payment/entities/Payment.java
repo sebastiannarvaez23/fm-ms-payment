@@ -15,6 +15,8 @@ public class Payment {
     private long id;
     private String description;
     private float payment;
-    private String paymentLink;
+    private String payday;
+    private String paymentlink;
+    private boolean paid;
     
 }
