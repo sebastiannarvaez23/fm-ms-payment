@@ -1,9 +1,11 @@
 package com.financemachine.payment.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
 
 @Entity
@@ -11,7 +13,9 @@ import lombok.Data;
 public class Payment {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "payment_id_seq")
+    @SequenceGenerator(name = "payment_id_seq", sequenceName = "payment_id_seq", allocationSize = 1)
+    @Column(name = "id")
     private long id;
     private String description;
     private float payment;

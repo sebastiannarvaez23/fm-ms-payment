@@ -1,0 +1,29 @@
+package com.financemachine.payment.service;
+
+import com.financemachine.payment.entities.Income;
+import com.financemachine.payment.repository.PaymentRepository;
+import com.financemachine.payment.response.MonthlyBalanceResponse;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Slf4j
+@Service
+public class PaymentServiceImp implements PaymentService{
+    
+    @Autowired
+    PaymentRepository paymentRepository;
+    
+    @Autowired
+    FeignClientService feignClientService;
+
+    @Override
+    public MonthlyBalanceResponse getMonthlyBalance() {
+        float pendinAmount = paymentRepository.getPendingAmount();
+        Income income = feignClientService.getIncome();
+        float disbalance = income.getBasic() + (income.getAdditional() != null ? income.getAdditional() : 0) - pendinAmount;
+        MonthlyBalanceResponse response = new MonthlyBalanceResponse(pendinAmount, disbalance);
+        return response;
+    }
+    
+}
