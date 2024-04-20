@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PaymentRepository extends JpaRepository<Payment, Long> {
     
-    @Query(""
-            + " SELECT SUM(p.payment) FROM Payment p "
-            + " WHERE paid = false ")
-    public float getPendingAmount();
+    @Query("SELECT SUM(p.payment) FROM Payment p WHERE paid = false")
+    public Float getPendingAmount();
     
 }

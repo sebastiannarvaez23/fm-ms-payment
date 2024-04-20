@@ -19,9 +19,12 @@ public class PaymentServiceImp implements PaymentService{
 
     @Override
     public MonthlyBalanceResponse getMonthlyBalance() {
-        float pendinAmount = paymentRepository.getPendingAmount();
+        Float pendinAmount = paymentRepository.getPendingAmount();
         Income income = feignClientService.getIncome();
-        float disbalance = income.getBasic() + (income.getAdditional() != null ? income.getAdditional() : 0) - pendinAmount;
+        Float disbalance = 0.0f;
+        if (pendinAmount != null) {
+            disbalance = income.getBasic() + (income.getAdditional() != null ? income.getAdditional() : 0) - pendinAmount;
+        }
         MonthlyBalanceResponse response = new MonthlyBalanceResponse(pendinAmount, disbalance);
         return response;
     }
