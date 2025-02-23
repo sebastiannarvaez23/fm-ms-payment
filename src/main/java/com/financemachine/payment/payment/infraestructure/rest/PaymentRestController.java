@@ -1,8 +1,8 @@
-package com.financemachine.payment.controller;
+package com.financemachine.payment.payment.infraestructure.rest;
 
-import com.financemachine.payment.entities.Payment;
-import com.financemachine.payment.repository.PaymentRepository;
-import com.financemachine.payment.service.PaymentService;
+import com.financemachine.payment.payment.infraestructure.entity.Payment;
+import com.financemachine.payment.payment.domain.port.PaymentRepository;
+import com.financemachine.payment.payment.application.service.PaymentService;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

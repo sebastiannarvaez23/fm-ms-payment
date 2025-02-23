@@ -1,4 +1,4 @@
-package com.financemachine.payment.config;
+package com.financemachine.payment.payment.infraestructure.conf;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

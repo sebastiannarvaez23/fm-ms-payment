@@ -1,4 +1,4 @@
-package com.financemachine.payment.service;
+package com.financemachine.payment.payment.application.service;
 
 public interface FeignClientService {
     

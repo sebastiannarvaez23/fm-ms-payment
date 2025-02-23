@@ -1,7 +1,6 @@
-package com.financemachine.payment.service;
+package com.financemachine.payment.payment.application.service;
 
-import com.financemachine.payment.repository.PaymentRepository;
-import com.financemachine.payment.response.MonthlyBalanceResponse;
+import com.financemachine.payment.payment.domain.port.PaymentRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

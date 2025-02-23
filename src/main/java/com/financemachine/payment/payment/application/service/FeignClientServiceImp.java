@@ -1,9 +1,8 @@
-package com.financemachine.payment.service;
+package com.financemachine.payment.payment.application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

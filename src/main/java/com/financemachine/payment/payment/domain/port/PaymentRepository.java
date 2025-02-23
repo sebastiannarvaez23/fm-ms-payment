@@ -1,6 +1,6 @@
-package com.financemachine.payment.repository;
+package com.financemachine.payment.payment.domain.port;
 
-import com.financemachine.payment.entities.Payment;
+import com.financemachine.payment.payment.infraestructure.entity.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
