@@ -6,6 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public interface PaymentService {
     
-    public MonthlyBalanceResponse getMonthlyBalance();
+    //public MonthlyBalanceResponse getMonthlyBalance();
     
 }

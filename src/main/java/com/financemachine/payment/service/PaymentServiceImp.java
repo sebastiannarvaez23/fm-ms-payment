@@ -1,6 +1,5 @@
 package com.financemachine.payment.service;
 
-import com.financemachine.payment.entities.Income;
 import com.financemachine.payment.repository.PaymentRepository;
 import com.financemachine.payment.response.MonthlyBalanceResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class PaymentServiceImp implements PaymentService{
+public class PaymentServiceImp implements PaymentService {
     
     @Autowired
     PaymentRepository paymentRepository;
@@ -17,7 +16,7 @@ public class PaymentServiceImp implements PaymentService{
     @Autowired
     FeignClientService feignClientService;
 
-    @Override
+    /*@Override
     public MonthlyBalanceResponse getMonthlyBalance() {
         Float pendinAmount = paymentRepository.getPendingAmount();
         Income income = feignClientService.getIncome();
@@ -27,6 +26,6 @@ public class PaymentServiceImp implements PaymentService{
         }
         MonthlyBalanceResponse response = new MonthlyBalanceResponse(pendinAmount, disbalance);
         return response;
-    }
+    }*/
     
 }
